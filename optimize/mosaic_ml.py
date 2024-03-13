@@ -87,7 +87,7 @@ def parse_args() -> Namespace:
         '--resize',
         default="False",
         type=bool,
-        action='store_true',
+#        action='store_true',
         help='Local directory path of the input raw dataset',
     )
     return args.parse_args()
