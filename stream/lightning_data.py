@@ -19,7 +19,7 @@ if os.path.isdir(cache_dir):
 seed_everything(42)
 
 # 3. Get the optimized dataset
-add_s3_connection("optimized-imagenet-1m")
+#add_s3_connection("optimized-imagenet-1m")
 
 # 4. Create a custom streaming dataset for Imagenet
 class ImageNetStreamingDataset(StreamingDataset):
@@ -41,7 +41,7 @@ class ImageNetStreamingDataset(StreamingDataset):
 # 5. Define the DataLoader
 dataloader = StreamingDataLoader(
     ImageNetStreamingDataset(
-        input_dir="/teamspace/s3_connections/optimized-imagenet-1m/lightning_data_imagenet/train",
+        input_dir="s3://mosaicml-internal-regression-test/train",
         max_cache_size="200GB",
     ), 
     batch_size=256,
