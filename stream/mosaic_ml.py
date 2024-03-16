@@ -28,7 +28,8 @@ seed_everything(42)
 # 4. Create streaming dataset
 class LitDataImageNetStreamingDataset(StreamingDataset):
     def __init__(self, local, remote):
-        super().__init__(local=local, remote=remote, shuffle_block_size=1<<18, partition_algo='orig', shuffle=False, shuffle_seed=9176, shuffle_algo='py1s', batch_size=256)
+        #super().__init__(local=local, remote=remote, shuffle_block_size=1<<18, partition_algo='orig', shuffle=False, shuffle_seed=9176, shuffle_algo='py1s', batch_size=256)
+        super().__init__(local=local, remote=remote, batch_size=256)
 
         self.transform = T.Compose(
             [   

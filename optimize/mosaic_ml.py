@@ -153,7 +153,7 @@ def main(args: Namespace) -> None:
             hashes=hashes,
             size_limit=args.size_limit,
             progress_bar=args.progress_bar,
-            max_workers=os.cpu_count(),
+            max_workers=10, # os.cpu_count(),
         ) as out:
             for i in tqdm(indices):
                 if args.validate:
